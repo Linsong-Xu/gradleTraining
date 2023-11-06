@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    maven {
+        url uri('/Users/uvo9ono/.m2/repository')
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.example:module_a:1.1.0'
+    implementation('org.springframework.boot:spring-boot-starter-web') {
+        version {
+            strictly '3.1.1'
+        }
+    }
+
+    //implementation 'org.example:module_b:1.0.0'
+}
+
+test {
+    useJUnitPlatform()
+}
